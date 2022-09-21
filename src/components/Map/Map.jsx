@@ -1,5 +1,5 @@
 import React from 'react';
-import googleMapReact from 'google-map-react';
+import GoogleMapReact from 'google-map-react';
 import { Paper, Typography, useMediaQuery } from '@material-ui/core';
 import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined';
 import Rating from '@material-ui/lab';
@@ -14,18 +14,21 @@ const Map = () => {
 
   return (
     <div className={classes.mapContainer}>
-      <googleMapReact
+      <GoogleMapReact
         bootstrapURLKeys={{ key: 'AIzaSyDMgWFqcEdKhZ9p2Cq2_-rR0pgKNjVnJjg' }}
         defaultCenter={coordiantes}
         center={coordiantes}
         defaultZoom={14}
         margin={[50, 50, 50, 50]}
         options={''}
-        onChange={''}
-        onChildClick={''}
+        onChange={(e) => {
+          // setCoords({ lat: e.center.lat, lng: e.center.lng });
+          // setBounds({ ne: e.marginBounds.ne, sw: e.marginBounds.sw });
+        }}
+        // onChildClick={(child) => setChildClicked(child)}
       >
 
-      </googleMapReact>
+      </GoogleMapReact>
     </div>
   );
 }
